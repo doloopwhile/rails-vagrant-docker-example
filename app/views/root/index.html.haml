@@ -1,0 +1,12 @@
+%h1 Rails docker vagrant example
+%p
+  RAILS_ENV=#{Rails.env}
+
+%h2 メモ
+= form_for :memo, url: { action: :memo } do |f|
+  = f.text_field :text
+  = f.submit
+
+%ul
+  - @memos.each do |memo|
+    %li= memo.text
